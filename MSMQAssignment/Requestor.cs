@@ -6,19 +6,16 @@ using System.Threading.Tasks;
 
 namespace MSMQAssignment
 {
-    public class Student
+    public class Requestor
     {
 
         public string Name { get; set; }
 
-        public int Age { get; set; }
-
         public List<String> Degrees { get; set; }
 
 
-        public Student(string name, int age, List<String> degrees)
+        public Requestor(string name, List<String> degrees)
         {
-            this.Age = age;
             this.Name = name;
             degrees = new List<string>();
         }
