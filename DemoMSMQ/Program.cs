@@ -44,8 +44,8 @@ namespace DemoMSMQ
             Program d = new Program();
             d.GetChannel();
             d.Populate();
-            //string result = d.GetResult(); Console.WriteLine(" send: {0} ", d.myText);
-            //Console.WriteLine(" receive: {0} ", result); Console.ReadLine();
+            string result = d.GetResult(); Console.WriteLine(" send: {0} ", d.myText);
+            Console.WriteLine(" receive: {0} ", result); Console.ReadLine();
 
 
         }
