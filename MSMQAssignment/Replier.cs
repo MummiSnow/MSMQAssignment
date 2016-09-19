@@ -37,14 +37,16 @@ namespace MSMQAssignment
             try
             {
                 requestMessage = requestQueue.Receive(new TimeSpan(0, 3, 0));
+                Console.WriteLine("Recieved request from {0} with id{1}", requestMessage.Label, requestMessage.Id);
                 string contents = requestMessage.Body.ToString();
                 MessageQueue replyQueue = requestMessage.ResponseQueue;
                 Message replyMessage = new Message();
                 replyMessage.Body = contents;
                 replyMessage.CorrelationId = requestMessage.Id;
                 replyQueue.Send(replyMessage);
+                Console.WriteLine("Sent request to {0} with id {1} and corr id {2}", replyMessage.Label, replyMessage.Id, replyMessage.CorrelationId);
 
-                
+
                 //requestMessage.Formatter = new XmlMessageFormatter(new String[] { "System.String,mscorlib" });
                 //str = requestMessage.Body.ToString();
                 //label = requestMessage.Label;
