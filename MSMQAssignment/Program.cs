@@ -10,6 +10,8 @@ namespace MSMQAssignment
     {
         static void Main(string[] args)
         {
+            
+
         }
     }
 }
