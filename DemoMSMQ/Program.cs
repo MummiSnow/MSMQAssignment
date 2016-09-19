@@ -24,7 +24,7 @@ namespace DemoMSMQ
             msg.Body = myText;
             msg.Label = "Mummi";
             mq.Send(msg);
-            Console.WriteLine(" Posted in MyQueue1");
+            Console.WriteLine(" Posted in MyQueue1 " + msg.Id);
         }
 
         private string GetResult()
@@ -45,8 +45,11 @@ namespace DemoMSMQ
             Program d = new Program();
             d.GetChannel();
             d.Populate();
-            string result = d.GetResult(); Console.WriteLine(" send: {0} ", d.myText);
-            //Console.WriteLine(" receive: {0} ", result); Console.ReadLine();
+            //string result = d.GetResult(); Console.WriteLine(" send: {0} ", d.myText);
+            //Console.WriteLine(" receive: {0} ", result); 
+            Console.ReadLine();
+
+
 
 
         }
